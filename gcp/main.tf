@@ -30,5 +30,11 @@ resource "google_compute_instance" "demo" {
     scopes = ["compute-ro", "monitoring", "service-control"]
   }
 
+  labels {
+    name  = var.instance_name
+    owner = "roger"
+    ttl   = -1
+  }
+
   allow_stopping_for_update = true
 }
